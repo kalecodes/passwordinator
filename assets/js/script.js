@@ -1,16 +1,10 @@
 // Assignment code here
-var lowAlpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var capAlpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var num = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var special = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
+const lowAlpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+const capAlpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+const num = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const special = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?", "~"];
 var usableCharacters = [];
-password = "";
-
-var passwordLength;
-var promptSpecial;
-var promptCap;
-var promptLow;
-var promptNumeric;
+var password = " ";
 
 function generatePassword() {
   var passwordLength = prompt("Please choose a password length between 8 and  128 characters.");
@@ -27,22 +21,22 @@ function generatePassword() {
   var promptSpecial = confirm('Do you wish to include special characters in your password?');
 
   if (promptCap) {
-    usableCharacters += capAlpha
+    usableCharacters += capAlpha.join('')
     console.log('Capital letters selected')
   };
 
   if (promptLow) {
-    usableCharacters += lowAlpha
+    usableCharacters += lowAlpha.join('')
     console.log('Lower case letters selected')
   };
 
   if (promptNumeric) {
-    usableCharacters += num
+    usableCharacters += num.join('')
     console.log('Numeric values selected')
   }; 
 
   if (promptSpecial) {
-    usableCharacters += special
+    usableCharacters += special.join('')
     console.log('Special characters selected')
   };
 
@@ -53,7 +47,7 @@ function generatePassword() {
   console.log(usableCharacters);
 
   for (let i = 0; i < passwordLength; i++) {
-    password +=usableCharacters[Math.floor(Math.random () * usableCharacters.length)];
+    password += usableCharacters[Math.floor(Math.random () * usableCharacters.length)];
   }
   return password;
 }
