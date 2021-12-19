@@ -11,7 +11,7 @@ function generatePassword() {
   if (passwordLength >= 8 && passwordLength <= 128) {
     console.log(passwordLength);
   } else {
-    alert('Please choose a valid password length between 8 & 128 characters.')
+    alert('Please choose a valid password length between 8 & 128 characters.  Please click the "Generate Password" button again to restart and try again.')
     return '';
   }
 
