@@ -7,7 +7,7 @@ var usableCharacters = [];
 var password = " ";
 
 function generatePassword() {
-  var passwordLength = prompt("Please choose a password length between 8 and  128 characters.");
+  var passwordLength = prompt("Please choose a password length between 8 and 128 characters.");
   if (passwordLength >= 8 && passwordLength <= 128) {
     console.log(passwordLength);
   } else {
@@ -15,10 +15,10 @@ function generatePassword() {
     return '';
   }
 
-  var promptCap = confirm('Do you wish to include capital letters (A-Z) in your password?');
-  var promptLow = confirm('Do you wish to include lower case letters (a-z) in your password?');
-  var promptNumeric = confirm('Do you wish to include numeric values (0-9) in your password?');
-  var promptSpecial = confirm('Do you wish to include special characters in your password?');
+  var promptCap = confirm('Do you wish to include capital letters (A-Z) in your password? Please select "OK" for YES or "Cancel" for NO.');
+  var promptLow = confirm('Do you wish to include lower case letters (a-z) in your password? Please select "OK" for YES or "Cancel" for NO.');
+  var promptNumeric = confirm('Do you wish to include numeric values (0-9) in your password? Please select "OK" for YES or "Cancel" for NO.');
+  var promptSpecial = confirm('Do you wish to include special characters in your password? Please select "OK" for YES or "Cancel" for NO.');
 
   if (promptCap) {
     usableCharacters += capAlpha.join('')
