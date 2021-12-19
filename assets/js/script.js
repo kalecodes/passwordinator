@@ -3,10 +3,11 @@ const lowAlpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m
 const capAlpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const num = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const special = ["!", "#", "$", "'", "(", ")", "%", "&", ",", ":", ";", "=", "@", "[", "]", "^", "_", "*", "{", "}", "+", "-", ".", "/", "<", ">", "?", "~"];
-var usableCharacters = [];
-var password = " ";
 
 function generatePassword() {
+  var usableCharacters = [];
+  var password = " ";
+
   var passwordLength = prompt("Please choose a password length between 8 and 128 characters.");
   if (passwordLength >= 8 && passwordLength <= 128) {
     console.log(passwordLength);
@@ -44,7 +45,7 @@ function generatePassword() {
     return alert ('You must select at least one criteria! Please start again.')
   };
 
-  console.log(usableCharacters);
+  console.log("The password generator will randomly select from " + usableCharacters);
 
   for (let i = 0; i < passwordLength; i++) {
     password += usableCharacters[Math.floor(Math.random () * usableCharacters.length)];
@@ -60,6 +61,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.getElementById("password");
   passwordText.value = password;
+  console.log("Your password is" + password);
 }
 
 // Add event listener to generate button
